@@ -1,0 +1,103 @@
+<form>
+
+  <div class="form-group row">
+    <%= label_tag nil, @person.class.human_attribute_name("name"), class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= text_field_tag nil, @person.name, class: "form-control", readonly: true %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= label_tag nil, @person.class.human_attribute_name("nickname"), class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= text_field_tag nil, @person.nickname, class: "form-control", readonly: true %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= label_tag nil, @person.class.human_attribute_name("email"), class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= text_field_tag nil, @person.email, class: "form-control", readonly: true %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= label_tag nil, @person.class.human_attribute_name("elephone"), class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= text_field_tag nil, @person.telephone, class: "form-control", readonly: true %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= label_tag nil, @person.class.human_attribute_name("rg"), class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= text_field_tag nil, @person.rg, class: "form-control", readonly: true %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= label_tag nil, @person.class.human_attribute_name("cpf"), class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= text_field_tag nil, @person.cpf, class: "form-control", readonly: true %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= label_tag nil, @person.class.human_attribute_name("cnpj"), class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= text_field_tag nil, @person.cnpj, class: "form-control", readonly: true %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= label_tag nil, @person.class.human_attribute_name("ie"), class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= text_field_tag nil, @person.ie, class: "form-control", readonly: true %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= label_tag nil, @person.class.human_attribute_name("shift_id"), class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= number_field_tag nil, @person.shift_id, class: "form-control", readonly: true %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= label_tag nil, @person.class.human_attribute_name("user_id"), class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= number_field_tag nil, @person.user_id, class: "form-control", readonly: true %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= label_tag nil, @person.class.human_attribute_name("client"), class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= text_field_tag nil, @person.client, class: "form-control", readonly: true %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= label_tag nil, @person.class.human_attribute_name("provider"), class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= text_field_tag nil, @person.provider, class: "form-control", readonly: true %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= label_tag nil, @person.class.human_attribute_name("user"), class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= text_field_tag nil, @person.user, class: "form-control", readonly: true %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= label_tag nil, @person.class.human_attribute_name("excluded"), class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= check_box_tag nil, @person.excluded, class: "excluded", readonly: true %>
+    </div>
+  </div>
+  
+</form>
+<%= link_to I18n.t('links.edit'), edit_person_path(@person), type: "button", class: "btn btn-primary" %>
+<%= link_to I18n.t('links.back'), people_path, type: "button", class: "btn btn-primary" %>

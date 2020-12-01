@@ -1,0 +1,48 @@
+<form>
+
+  <div class="form-group row">
+    <%= label_tag nil, @contact.class.human_attribute_name("name"), class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= text_field_tag nil, @contact.name, class: "form-control", readonly: true %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= label_tag nil, @contact.class.human_attribute_name("email"), class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= text_field_tag nil, @contact.email , class: "form-control", readonly: true %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= label_tag nil, @contact.class.human_attribute_name("telephone"), class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= text_field_tag nil, @contact.telephone, class: "form-control", readonly: true %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= label_tag nil, @contact.class.human_attribute_name("cell_phone"), class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= text_field_tag nil, @contact.cell_phone, class: "form-control", readonly: true %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= label_tag nil, @contact.class.human_attribute_name("contact_type"), class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= text_field_tag nil, @contact.contact_type, class: "form-control", readonly: true %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= label_tag nil, @contact.class.human_attribute_name("excluded"), class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= check_box_tag nil, @contact.excluded, class: "excluded", readonly: true %>
+    </div>
+  </div>
+</form>
+
+<%= link_to I18n.t('links.edit'), edit_contact_path(@contact), type: "button", class: "btn btn-primary" %>
+<%= link_to I18n.t('links.back'), contacts_path, type: "button", class: "btn btn-primary" %>
+

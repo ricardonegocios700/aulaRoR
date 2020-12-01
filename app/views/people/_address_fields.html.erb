@@ -1,0 +1,55 @@
+<div class="nested-fields">
+  
+  <div class="form-group row">
+    <%= f.label :street, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :street, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :district, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :district, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :city, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :city, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :country, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :country, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :postal_code, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :postal_code, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :type_address_id, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= f.select("type_address_id", @address_type_options, { include_blank: 'Selecione...'}, class: "form-control") %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :excluded, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= f.check_box :excluded, class: "checkbox" %>
+    </div>
+  </div>
+
+  <%= link_to_remove_association('[remove]', f) %>
+
+  <br></br>
+</div>

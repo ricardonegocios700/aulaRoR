@@ -1,0 +1,138 @@
+<%= form_with(model: person, local: true) do |form| %>
+    <% if person.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(person.errors.count, "error") %> prohibited this person from being saved:</h2>
+        <ul>
+          <div class="alert alert-danger alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+              <% person.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+             <% end %>
+          </div>
+      
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group row">
+      <%= form.label :name, class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.text_field :name, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <%= form.label :nickname, class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.text_field :nickname, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <%= form.label :email, class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.text_field :email, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <%= form.label :telephone, class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.text_field :telephone, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <%= form.label :rg, class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.text_field :rg, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <%= form.label :cpf, class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.text_field :cpf, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <%= form.label :cnpj, class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.text_field :cnpj, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <%= form.label :ie, class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.text_field :ie, class: "form-control" %>
+      </div>
+    </div>
+    
+    <div class="form-group row">
+      <%= form.label :shift_id, class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.select("shift_id", @shift_options, { include_blank: 'Selecione...'}, class: "form-control") %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <%= form.label :user_id, class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.number_field :user_id, class: "form-control" %>
+      </div>
+    </div>
+
+  <div class="form-group row">
+    <%= form.label :client, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+    <%= form.check_box :client, class: "checkbox" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label :provider, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+    <%= form.check_box :provider, class: "checkbox" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label :user, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+    <%= form.check_box :user, class: "checkbox" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label :excluded, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+    <%= form.check_box :excluded, class: "checkbox" %>
+    </div>
+  </div>
+  <div>
+  <h1><%= I18n.t('address.other') %></h1>
+    <div id="addresses">
+      <%= form.fields_for :addresses do |address| %>
+        <%= render partial: "address_fields", locals: { f: address } %>
+      <% end %>
+      <%= link_to_add_association '[adicionar]', form, :addresses %>
+    </div>
+  <h1><%= I18n.t('contact.other') %></h1>
+    <div id="contacts">
+      <%= form.fields_for :contacts do |contact| %>
+        <%= render partial: "contact_fields", locals: { f: contact } %>
+      <% end %>
+      <%= link_to_add_association '[adicionar]', form, :contacts %>
+    </div>
+  <%# session[:type] = session[:type] %>
+  <div class="col-auto">
+    <%= form.submit nil, class: "btn btn-primary mb-2" %>
+    <% unless params[:action] == 'new' %>
+      <%= link_to I18n.t('links.show'), @person, type: "button", class: "btn btn-primary" %>  
+    <% end %>
+    <%= link_to I18n.t('links.back'), people_path, type: "button", class: "btn btn-primary" %>
+  </div>
+
+<% end %>

@@ -1,0 +1,33 @@
+
+<table class="table table-hover">
+  <thead class="thead-dark">
+    <tr>
+
+      <th><%= @contact_types.human_attribute_name("description") %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contact_types.each do |contact_type| %>
+      <tr>
+        <td><%= contact_type.description %></td>
+        <td><%= link_to 'Show', contact_type %></td>
+        <td style="width: 30px">
+          <%= link_to edit_contact_type_path(contact_type) do %>
+            <button type="button" class="btn btn-primary btn-circle">
+              <i class="fa fa-edit"></i>
+            </button>
+          <% end %>
+        </td>
+        <td><%= link_to 'Destroy', contact_type, method: :delete, data: { confirm: t('confirm') } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="text-center">
+  <%= paginate @contact_types %>
+</div>
+
+
+<%= link_to I18n.t('links.new_contact_type'), new_contact_type_path, type: "button", class: "btn btn-primary" %>

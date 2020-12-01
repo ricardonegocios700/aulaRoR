@@ -1,0 +1,33 @@
+
+<table class="table table-hover">
+  <thead class="thead-dark">
+    <tr>
+
+      <th><%= @address_types.human_attribute_name("description") %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @address_types.each do |address_type| %>
+      <tr>
+        <td><%= address_type.description %></td>
+        <td><%= link_to 'Show', address_type %></td>
+        <td style="width: 30px">
+          <%= link_to edit_address_type_path(address_type) do %>
+            <button type="button" class="btn btn-primary btn-circle">
+              <i class="fa fa-edit"></i>
+            </button>
+          <% end %>
+        </td>
+        <td><%= link_to 'Destroy', address_type, method: :delete, data: { confirm: t('confirm') } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="text-center">
+  <%= paginate @address_types %>
+</div>
+
+
+<%= link_to I18n.t('links.new_address_type'), new_address_type_path, type: "button", class: "btn btn-primary" %>

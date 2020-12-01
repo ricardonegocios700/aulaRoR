@@ -1,0 +1,46 @@
+<%= form_with(model: address_type, local: true) do |form| %>
+  <% if address_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(address_type.errors.count, "error") %> prohibited this address_type from being saved:</h2>
+      <ul>
+        <div class="alert alert-danger alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+          <% address_type.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </div>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="form-group row">
+    <%= form.label :description, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= form.text_field :description, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :note, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= form.text_area :note, class:"form-control", rows:"3" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label :excluded, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+    <%= form.check_box :excluded, class: "checkbox" %>
+    </div>
+  </div>
+
+  <div class="col-auto">
+    <%= form.submit nil, class: "btn btn-primary mb-2" %>
+    <% unless params[:action] == 'new' %>
+      <%= link_to I18n.t('address_type.show'), address_type, type: "button", class: "btn btn-primary" %> 
+    <% end %>
+    <%= link_to I18n.t('address_type.back'), address_types_path, type: "button", class: "btn btn-primary" %>
+  </div>
+
+<% end %>

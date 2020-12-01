@@ -1,0 +1,100 @@
+<%= form_with(model: shift, local: true) do |form| %>
+  <% if shift.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shift.errors.count, "error") %> prohibited this shift from being saved:</h2>
+      <ul>
+        <div class="alert alert-danger alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+          <% shift.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </div>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group row">
+    <%= form.label :description, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= form.text_field :description, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label :start_time, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= form.time_select :start_time, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label :endtime_time, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= form.time_select :endtime_time, class: "form-control" %>
+    </div>
+  </div>
+  
+  <div class="form-group row">
+    <%= form.label :sunday, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+    <%= form.check_box :sunday, class: "checkbox" %>
+    </div>
+  </div>
+    
+  <div class="form-group row">
+    <%= form.label :monday, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+    <%= form.check_box :monday, class: "checkbox" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label :tuesday, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+    <%= form.check_box :tuesday, class: "checkbox" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label :fourth, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+    <%= form.check_box :fourth, class: "checkbox" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label :fifth, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+    <%= form.check_box :fifth, class: "checkbox" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label :friday, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+    <%= form.check_box :friday, class: "checkbox" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label :saturday, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+    <%= form.check_box :saturday, class: "checkbox" %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label :excluded, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+    <%= form.check_box :excluded, class: "checkbox" %>
+    </div>
+  </div>
+
+  <div class="col-auto">
+    <%= form.submit nil, class: "btn btn-primary mb-2" %>
+    <% unless params[:action] == 'new' %>
+      <%= link_to I18n.t('links.show'), @shift, type: "button", class: "btn btn-primary" %>
+    <% end %>
+    <%= link_to I18n.t('links.back'), shifts_path, type: "button", class: "btn btn-primary" %>
+  </div>
+<% end %>

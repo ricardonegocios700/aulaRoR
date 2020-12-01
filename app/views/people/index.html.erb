@@ -1,0 +1,49 @@
+<table class="table table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th><%= Person.human_attribute_name("name") %></th>
+      <th><%= Person.human_attribute_name("nickname") %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @people.each do |person| %>
+      <tr>
+        <td><%= person.name %></td>
+        <td><%= person.nickname %></td>
+        <td style="width: 30px">
+          <%= link_to new_address_path(person, p_id: person.id) do  %>
+            <button type="button" class="btn btn-warning btn-circle">
+              <i class="fa fa-times"></i>
+            </button>
+          <% end %>
+        </td>
+
+
+        <td><%= link_to I18n.t('links.show'), person %></td>
+        <td style="width: 30px">
+          <%= link_to edit_person_path(person,type: params[:type]) do %>
+            <button type="button" class="btn btn-primary btn-circle">
+              <i class="fa fa-edit"></i>
+            </button>
+          <% end %>
+        </td>
+        <td style="width: 30px">
+          <%#= link_to person, method: :delete, data: { confirm: I18n.t('confirm')}, class="btn btn-primary btn-circle" do %>
+            <button type="button" >
+              <i class="fa fa-trash-o"></i>
+            </button>
+          <%# end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<div class="text-center">
+  <%= paginate @people %>
+</div>
+
+<%= link_to I18n.t('links.new_person'), new_person_path, type: "button", class: "btn btn-primary" %>

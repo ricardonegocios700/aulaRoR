@@ -1,0 +1,12 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= I18n.t('app_name') %></h1>
+  <p class="lead"><%= I18n.t('welcome.description') %></p>
+  <hr class="my-4">
+  <p><%= I18n.t('welcome.complement') %></p>
+  <p> Usuário: teste@teste.com    Senha: abc123@</p>
+  <% @types.each do |t|%>
+	<%= link_to I18n.t("#{t}.other") , people_path(type: t), class: "btn btn-primary btn-lg", role: "button" %>
+  <% end %>
+  <%#= link_to I18n.t('person_type'), person_types_path, class: "btn btn-primary btn-lg", role: "button" %>
+</div>
+

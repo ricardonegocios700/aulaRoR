@@ -1,0 +1,94 @@
+
+pt-BR:
+  activerecord:
+    models:
+      address:
+        one: Endereço
+        other: Endereços
+      address_type:
+        one: Tipo de Endereço
+        other: Tipos de endereços
+      contact:
+        one: Contato
+        other: Contatos
+      contact_type:
+        one: Tipo de contato
+        other: Tipos de contatos
+      person:
+        one: Pessoa
+        other: Pessoas
+      shift:
+        one: Turno
+        other: Turnos
+
+    attributes:
+      address:
+        address: "Endereço"
+        street: "Logradouro"
+        district: "Bairro"
+        city: "Cidade"
+        state: "UF"
+        country: "País"
+        postal_code: "CEP"
+        type_address_id: "Tipo de endereço"
+        excluded: "Excluído"
+        created_at: "Criado em"
+        updated_at: "Última atualização"
+      address_type:
+        description: "Descrição"
+        note: "Observação"
+        excluded: "Excluído"
+        created_at: "Criado em"
+        updated_at: "Última atualização"
+      contact:
+        name: "Nome"
+        email: "Email"
+        telephone: "Telefone"
+        cell_phone: "Celular"
+        contact_type: "Tipo de contato"
+        excluded: "Excluído"
+        created_at: "Criado em"
+        updated_at: "Última atualização"
+      contact_type:
+        description: "Descrição"
+        note: "Observação"
+        excluded: "Excluído"
+        created_at: "Criado em"
+        updated_at: "Última atualização"
+      person:
+        name: "Nome"
+        nickname: "Apelido"
+        email: "Email"
+        telephone: "Telefone"
+        rg: "RG"
+        cpf: "CPF"
+        cnpj: "CNPJ"
+        ie: "IE"
+        address: "Endereço"
+        address_id: "Endereço"
+        user_id: "Usuário"
+        user: "Usuário"
+        client: "Cliente"
+        provider: "Fornecedor"
+        contact: "Contato"
+        contact_id: "Contato"
+        shift: "Turno"
+        shift_id: "Turno"
+        excluded: "Excluído"
+        created_at: "Criado em"
+        updated_at: "Última atualização"
+      shift:
+        description: "Descrição"
+        note: "Observação"
+        excluded: "Excluído"
+        created_at: "Criado em"
+        updated_at: "Última atualização"
+        start_time: "Inicio"
+        endtime_time: "Fim"
+        sunday: "Domingo"
+        monday: "Segunda-feira" 
+        tuesday: "Terça-feira" 
+        fourth: "Quarta-feira" 
+        fifth: "Quinta-feira" 
+        friday: "Sexta-feira"
+        saturday: "Sabado"

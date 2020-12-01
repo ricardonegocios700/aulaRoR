@@ -1,0 +1,79 @@
+pt-BR:
+  actual_locale: Português(Br)
+  address: 
+    one: Endereço
+    show: Exibir
+    back: Voltar
+    other: Endereços
+  address_type:
+    one: Tipo de endereço
+    show: Exibir
+    back: Voltar
+    other: Tipos de endereço
+  app_name: Aula
+  
+  confirm: Você tem certeza?
+  contact:
+    one: Contato
+    show: Exibir
+    back: Voltar
+    other: Contatos
+  contact_type:
+    one: Tipos de contato
+    other: Tipos de contatos
+    show: Exibir
+    back: Voltar
+  edit: Editar
+  editing: Editando
+  event:
+    one: Evento
+    other: Eventos
+    show: Exibir
+    back: Voltar
+  index: Lista de
+  logout: Sair
+  new: Novo
+  options: Opções
+  programador: Programador
+  shift:
+    one: Turno
+    other: Turnos
+    show: Exibir
+    back: Voltar
+  show: Mostrar
+  showing: Mostrando
+  version_name: Aula v1.0
+  provider:
+    one: Fornecedor
+    other: Fornecedores
+  client:
+    one: Cliente
+    other: Clientes
+  user:
+    one: Usuário
+    other: Usuários
+  person:
+    one: Pessoa
+    other: Pessoas
+  
+  successfully created: Criado com sucesso
+  successfully updated: Atualizado com sucesso
+  successfully destroyed.: Deletado com sucesso
+ 
+  welcome:
+    description: Bem vindo a nossa página de desenvovimento do sistema.
+    complement: Estamos desenvolvendo o ambiente, obrigado por nos visitar! Por enquanto temos esse material pronto.
+
+  links:
+    back: Voltar
+    destroy: Apagar
+    edit: Editar
+    show: Exibir
+    new_address: Novo
+    new_address_type: Novo
+    new_contact: Novo
+    new_contact_type: Novo
+    new_person: Nova
+    new_shift: Novo
+    to_home: Página inicial
+  
