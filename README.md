@@ -1,27 +1,11 @@
 # README
-Ricardo
-teste de repositorio em hospedameusite
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 #aulaRoR
+
+Modelo de cadastro de pessoas em uma única tabela, dividindo person em 3 pessoas:
+provider (provedor)
+client (cliente)
+user (usuário)
+
+Com isso vc pode usar o mesmo registro nas 3 situações.
+
+Agradecimento ao professor fera https://github.com/jacksonpires que tem um curso show de bola na internet.
